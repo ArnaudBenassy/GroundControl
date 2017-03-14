@@ -1,0 +1,21 @@
+{
+  "name": "Ground-Control",
+  "version": "0.1.0",
+  "description": "Ground Control for HUD",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/ArnaudBenassy/GroundControl",
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Arnaud Benassy",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
