@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>Ground Control</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
     <style type="text/css">
-      img.thumb {
-        width: 100px;
+      body {
+        background: black;
       }
+      img.thumb {
+        max-width: 100px;
+        max-height: 100px;
+      }
+      #directory { margin: 10px; }
     </style>
   </head>
   <body>
-    <button id="directory">Choisir un répertoire</button>
+    <button id="directory" class="btn btn-primary"><span class="glyphicon glyphicon-folder-open"></span> Ouvrir un dossier</button>
     <div id="hud"></div>
     <div id="gallery"></div>
   </body>

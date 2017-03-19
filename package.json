@@ -16,6 +16,7 @@
     "electron": "^1.4.1"
   },
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "probe-image-size": "^3.0.0"
   }
 }

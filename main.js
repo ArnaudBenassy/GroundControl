@@ -29,7 +29,7 @@ function createWindows () {
   }));
 
   //mainWindow.webContents.openDevTools();
-  //displayWindow.webContents.openDevTools();
+  displayWindow.webContents.openDevTools();
 
   mainWindow.on('closed',  () => {
     mainWindow = null;
@@ -38,7 +38,7 @@ function createWindows () {
 
   displayWindow.on('closed', () => {
     displayWindow = null;
-    mainWindow.close();
+    //mainWindow.close();
   });
 
 }
