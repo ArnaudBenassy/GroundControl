@@ -1,4 +1,4 @@
-const electron = require('electron')
+const electron = require('electron');
 const ipc = electron.ipcMain;
 const dialog = electron.dialog;
 const fs = require('fs');
@@ -29,7 +29,7 @@ function createWindows () {
   }));
 
   //mainWindow.webContents.openDevTools();
-  displayWindow.webContents.openDevTools();
+  //displayWindow.webContents.openDevTools();
 
   mainWindow.on('closed',  () => {
     mainWindow = null;
@@ -53,6 +53,9 @@ ipc.on('open-file-dialog', (event) => {
   }, (dir) => {
     let list = [];
     event.sender.send('selected-directory', dir);
+    if (!dir) {
+      return;
+    }
     fs.readdir(dir[0], (err, subdir) => {
       subdir.forEach((filepath) => {
         if (filepath.includes('.jpg') || filepath.includes('.png')) list.push(filepath);
