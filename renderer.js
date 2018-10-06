@@ -19,13 +19,13 @@ ipc.on('selected-directory', (event, dir) => {
 ipc.on('found-images', (event, list) => {
   let i=0;
   list.forEach((elt) => {
-    gallery.innerHTML += `<img class="thumb" id="thumb-${i++}" src="${baseDir}/${elt}"/>`;
+    gallery.innerHTML += `<img class="thumb" id="thumb-${i++}" data-baseDir="${baseDir}" data-file="${elt}" src="${baseDir}/${elt}"/>`;
   });
 
   let thumbs = document.getElementsByClassName('thumb');
   for (let i = 0; i < thumbs.length; i++) {
     thumbs[i].addEventListener('click', (event) => {
-      ipc.send('maximize-image', event.target.currentSrc);
+      ipc.send('maximize-image', {baseDir: event.target.dataset.basedir, file: event.target.dataset.file});
     })
   }
 });

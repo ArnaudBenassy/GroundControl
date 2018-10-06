@@ -4,13 +4,13 @@ const probe = require('probe-image-size');
 
 const hud = document.getElementById('hud');
 
-ipc.on('maximize-image', function (event, src) {
+ipc.on('maximize-image', function (event, target) {
   hud.innerHTML = '';
   const link = document.createElement('a');
+  const src = target.baseDir + "/" + target.file;
   link.href = src;
-  const input = require('fs').createReadStream(decodeURI(link.pathname));
+  const input = require('fs').createReadStream(decodeURI(src));
   probe(input).then(dimensions => {
-    console.log(dimensions);
     const image = new Image();
     image.src = src;
     image.id = 'rendered-image';
